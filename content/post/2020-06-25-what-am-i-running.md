@@ -78,7 +78,7 @@ I get keys for things like Windows, Windows Server, and such through school. Bet
 Because this uses both PHP, and a database to store stuff, I need `php:fpm` and `mariadb` on top of the Nginx container to do this
 {{< /alert >}}
 
-{{< wide-image src="/img/posts/2020/06/what-am-i-running/diagram.png" title="The key dashboard in all its glory" >}}
+{{< wide-image src="/img/posts/2020/06/what-am-i-running/key-database.png" title="The key dashboard in all its glory" >}}
 
 I have a bit of work to do to tidy up the backend code and make it a bit more streamlined when I'm entering or editing keys, but it works for now.
 
