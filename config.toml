@@ -1,5 +1,5 @@
 # Tranquilpeak
-# Version : 0.4.7-BETA
+# Version : 0.4.8-BETA
 # Author : Thibaud Leprêtre
 
 # I STRONGLY recommend you to use a CDN to speed up loading of pages.
@@ -41,7 +41,8 @@ canonifyurls = true
   # Overwritten by your gravatar image if `author.gravatarEmail` is filled
   picture = "/img/profile.png"
   # Your Twitter username without the @. E.g : thibaudlepretre
-  twitter = ""
+  # twitter = "thibaudlepretre"
+  # googlePlus = "+ThibaudLepretre"
 
 # Menu Configuration
 [[menu.main]]
@@ -126,7 +127,7 @@ canonifyurls = true
   #    large sidebar is swiped on all lower screens
   # 5: Display header bar on all screens and large sidebar is swiped on large screen
   # 6: Display header bar on all screens and medium sidebar is swiped
-  sidebarBehavior = 2
+  sidebarBehavior = 1
 
   # Your blog cover picture. I STRONGLY recommend you to use a CDN to speed up loading of pages.
   # There is many free CDN like Cloudinary or you can also use indirectly
@@ -203,6 +204,6 @@ canonifyurls = true
   # [params.sidebar.profile]
   #   url = "/#about"
 
-  # Customize copyright value "© 2020 <CUSTOMIZATION>. All Rights Reserved"
+  # Customize copyright value "© 2017 <CUSTOMIZATION>. All Rights Reserved"
   # [params.footer]
   #   copyright = "<a href=\"https://github.com/kakawait\">kakawait</a>"
