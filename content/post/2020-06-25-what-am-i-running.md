@@ -7,7 +7,6 @@ coverImage: /img/posts/2020/06/what-am-i-running/header.jpg
 coversize: partial
 coverMeta: out
 metaAlignment: center
-clearReading: true
 categories:
 - Homelab
 - VirtualMachines
