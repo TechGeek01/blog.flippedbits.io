@@ -1,10 +1,9 @@
 ---
-title: 'What Am I Running?'
+title: "What Am I Running?"
 date: 2020-06-25
-thumbnailImagePosition: left
 thumbnailImage: /img/posts/2020/06/what-am-i-running/header.jpg
 coverImage: /img/posts/2020/06/what-am-i-running/header.jpg
-coversize: partial
+coverSize: partial
 coverMeta: out
 metaAlignment: center
 categories:
