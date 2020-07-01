@@ -112,7 +112,7 @@ canonifyurls = true
   # If false it will flat categories.
   hierarchicalCategories = false
 
-  description = "The ramblings of a tech guy with a homelab"
+  description = "The mindless ramblings of a tech guy with a homelab"
 
   # Customization
   # Define the behavior of the sidebar
