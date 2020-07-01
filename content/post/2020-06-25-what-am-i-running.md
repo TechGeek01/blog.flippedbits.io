@@ -9,7 +9,7 @@ coverMeta: out
 metaAlignment: center
 categories:
 - Homelab
-- Virtual-Machines
+- Virtual Machines
 - Docker
 tags:
 - homelab
