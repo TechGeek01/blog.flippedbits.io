@@ -29,6 +29,30 @@ summary: "Now that we have DNS set up for accessing servers and such locally, an
 This is part of a multi-part series on DNS. Part 3 will be coming soon!
 {{< /alert >}}
 
+## An addendum
+{{< alert info >}}
+In part 1, we set up Pi-hole for ad blocking, and set pfSense for local DNS with the DNS resolver. In setting this up, there was an oversight that I've made. DNS over TLS is definitely an option, so let's fix that and set it up now.
+{{< /alert >}}
+
+I'm going to assume you're using Cloudflare, as that's what I'm using, for upstream DNS. As long as your preferred provider supports DNS over TLS, you can swap your own in. Just substitute Cloudflare for your preferred servers.
+
+First off, make sure your DNS is set up properly. Head to **System > General** and add your DNS servers like so:
+
+{{< wide-image src="/img/posts/2020/07/wrangling-dns-pt-02-forcing-pfsense-dns/pfsense-general-dns-settings.png" title="Set your DNS to Cloudflare, or whatever your preferred provider is" >}}
+
+Next, go to **Services > DNS Resolver** and scroll down to the bottom, where it says **Custom Options**, and add in the following:
+
+{{< codeblock "Custom Options" >}}server:
+forward-zone:
+name: "."
+forward-ssl-upstream: yes
+forward-addr: 1.1.1.1@853
+forward-addr: 1.0.0.1@853
+{{< /codeblock >}}
+
+Substitute in your own DNS servers if you're not using Cloudflare, and you're all set with DNS over TLS!
+
+## On to the DNS forcing...
 So we previously [set up Pi-hole for DNS adblock, and pfSense to handle local hostnames]({{< relref "2020-07-03-wrangling-dns-pt-01-pihole.md" >}}). Now that adblock is happening everywhere, there's another slight problem you might run into. You might notice that DHCP is handing out the correct addresses, and clients are being told to use Pi-hole for the DNS servers. And if you're running static stuff like server VMs and such, you have the correct statically-assigned DNS servers too!
 
 So then, _why does your Alexa still have ads when you listen to music?_
