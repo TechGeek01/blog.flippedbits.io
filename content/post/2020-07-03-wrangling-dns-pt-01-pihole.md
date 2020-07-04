@@ -1,6 +1,6 @@
 ---
 title: "Wrangling DNS on Your Network, Part 1: Pi-hole"
-date: 2020-07-04
+date: 2020-07-03
 thumbnailImage: /img/posts/2020/07/wrangling-dns-pt-01-pihole/header.png
 coverImage: /img/posts/2020/07/wrangling-dns-pt-01-pihole/header.png
 coverSize: partial
