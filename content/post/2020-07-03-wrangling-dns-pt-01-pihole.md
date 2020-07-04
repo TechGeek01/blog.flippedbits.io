@@ -24,7 +24,11 @@ comments: false
 summary: "DNS can be confusing, even more so when you have multiple sources for information. Let's get that sorted..."
 ---
 {{< alert info >}}
-This is part of a multi-part series, in which I tackle setting up and configuring DNS on the network. Part 2 will be coming soon!
+This is part of a multi-part series, in which I tackle setting up and configuring DNS on the network.
+
+In part 2, we [force DNS to be routed through pfSense]({{< relref "2020-07-04-wrangling-dns-pt-02-forcing-pfsense-dns.md" >}}) to prevent devices from using their own DNS in place of the ones handed in DHCP.
+
+This is still ongoing!
 {{< /alert >}}
 
 So if you're like me, you hate ads. Your first idea for a solution might be to add a browser-based adblock solution. And if you're thinking that that would work, you'd be right. But it's a very localized solution, since you'd need an adblock solution on everything you used. Every browser, every device, you'd need a new adblock extension, since it's local to that machine. And that doesn't cover apps on your phone that you can't install adblock for. Or smart home devices.
