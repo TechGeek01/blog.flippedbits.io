@@ -27,7 +27,7 @@ summary: "DNS can be confusing, even more so when you have multiple sources for 
 This is part of a multi-part series, in which I tackle setting up and configuring DNS on the network.
 {{< /alert >}}
 
-So if you're like me, you hate ads. Your first idea for a solution might be to add a browser-based adblock solution. And if you're thinking that that would work, you'd be right. But it's a very localised solution, since you'd need an adblock solution on everything you used. Every browser, every device, you'd need a new adblock extension, since it's local to that machine. And that doesn't cover apps on your phone that you can't install adblock for. Or smart home devices.
+So if you're like me, you hate ads. Your first idea for a solution might be to add a browser-based adblock solution. And if you're thinking that that would work, you'd be right. But it's a very localized solution, since you'd need an adblock solution on everything you used. Every browser, every device, you'd need a new adblock extension, since it's local to that machine. And that doesn't cover apps on your phone that you can't install adblock for. Or smart home devices.
 
 Enter Pi-hole. Pi-hole is a DNS-based solution for handling adblock, and because it's DNS-based, not only does it work on every device, and every app, but it also makes your internet slightly faster, since it knocks down the ads at a network level before they even load into your app or browser.
 
@@ -55,7 +55,7 @@ This brings you to a new page, where you can fill in the details of the host you
 
 {{< wide-image src="/img/posts/2020/07/wrangling-dns-pt-01-pihole/pfsense-dns-resolver-host-override.png" title="pfSense DNS resolver's 'Host override' page" >}}
 
-In pfSense, instead of just one box for the input domain, this is split between domain, and hostname. If we were to enter `desktop.mydomain.com` in Pi-hole, in pfSense, we would instead make the domain `mydomain.com`, and make the hostname `desktop`, and pfSense will concatenate these together. To just make an alias for a domain, without a sudomain, just leave the hostname blank.
+In pfSense, instead of just one box for the input domain, this is split between domain, and hostname. If we were to enter `desktop.mydomain.com` in Pi-hole, in pfSense, we would instead make the domain `mydomain.com`, and make the hostname `desktop`, and pfSense will concatenate these together. To just make an alias for a domain, without a subdomain, just leave the hostname blank.
 
 Once you add a bunch of these entries, it can get confusing as to what these are all for, so pfSense provides a field to enter a description as to what this is for. This isn't parsed, and you can enter anything you want here. This is nice, and it's a feature Pi-hole doesn't seem to have just yet. Hopefully this'll be coming in the future.
 
