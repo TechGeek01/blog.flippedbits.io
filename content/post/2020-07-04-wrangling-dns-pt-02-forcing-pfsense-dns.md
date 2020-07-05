@@ -40,17 +40,11 @@ First off, make sure your DNS is set up properly. Head to **System > General** a
 
 {{< wide-image src="/img/posts/2020/07/wrangling-dns-pt-02-forcing-pfsense-dns/pfsense-general-dns-settings.png" title="Set your DNS to Cloudflare, or whatever your preferred provider is" >}}
 
-Next, go to **Services > DNS Resolver** and scroll down to the bottom, where it says **Custom Options**, and add in the following:
+Next, go to **Services > DNS Resolver** and check on a couple of options:
+* **Enable Forwarding Mode:** Checked
+* **Use SSL/TLS for outgoing DNS Queries to Forwarding Servers:** Checked
 
-{{< codeblock "Custom Options" >}}server:
-forward-zone:
-name: "."
-forward-ssl-upstream: yes
-forward-addr: 1.1.1.1@853
-forward-addr: 1.0.0.1@853
-{{< /codeblock >}}
-
-Substitute in your own DNS servers if you're not using Cloudflare, and you're all set with DNS over TLS!
+Once you {{< hl-text primary >}}Save{{< /hl-text >}}, you should be all set with DNS over TLS!
 
 ## On to the DNS forcing...
 So we previously [set up Pi-hole for DNS adblock, and pfSense to handle local hostnames]({{< relref "2020-07-03-wrangling-dns-pt-01-pihole.md" >}}). Now that adblock is happening everywhere, there's another slight problem you might run into. You might notice that DHCP is handing out the correct addresses, and clients are being told to use Pi-hole for the DNS servers. And if you're running static stuff like server VMs and such, you have the correct statically-assigned DNS servers too!
