@@ -26,7 +26,9 @@ comments: false
 summary: "Now that we have DNS set up for accessing servers and such locally, and we have adblock in place, we might want to prevent things like smart home devices from using their own DNS servers."
 ---
 {{< alert info >}}
-This is part of a multi-part series on DNS. Part 3 will be coming soon!
+This is part of a multi-part series on DNS.
+
+In part 3, we [replace Pi-hole with pfBlockerNG]({{< relref "2020-07-06-wrangling-dns-pt-03-pfblockerng.md" >}}) to attempt to put all our DNS stuff on one device.
 {{< /alert >}}
 
 ## An addendum
