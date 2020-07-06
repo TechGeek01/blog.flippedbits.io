@@ -27,7 +27,7 @@ summary: "When moving from Pi-hole to pfBlockerNG, it can be a bit confusing, so
 This is part of a multi-part series on DNS. Part 4 will be coming soon!
 {{< /alert >}}
 
-Everyone loves adblock, myself included, so of course I set up a Pi-hole a whole ago. It does so much more than just regular old browser-based adblock does, because there's no option to block ads with a browser extension in things like Android apps.
+Everyone loves adblock, myself included, so of course I set up a Pi-hole a while ago. It does so much more than just regular old browser-based adblock does, because there's no option to block ads with a browser extension in things like Android apps.
 
 But now that we have this set up, you might be wondering if there's another way. After all, in a homelab environment, of course everyone always wants to screw with things. Well, you'd be right. Conveniently, pfSense has a package called pfBlockerNG, that aims to basically do something like Pi-hole. It's not strictly for ad-blocking, but rather for general purpose DNS filtering.
 
