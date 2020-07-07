@@ -44,6 +44,12 @@ pfBlockerNG is a package for pfSense, so naturally, it's under **System > Packag
 
 Your two choices for installing are what looks like a normal version, and a development version. Here's the thing: that's not quite right. The `devel` version is very much stable, and is basically a rewrite of the UI that makes everything easier to work with. Because of this, we're going to be installing the `devel` version, which I'd recommend you also do. If, however, you're a masochist, the layout will be a bit different for you, and it may be harder to follow along here.In any case, click install, wait for it to do its thing, and it'll set everything up.
 
+{{< alert info >}}
+It should be noted that at the time of writing, the main package is v2.1.4_22, and the `devel` package is v2.2.5_33.
+
+BBCan177 has told me that the plan is for `devel` to become the main version sometime hopefully soon, so if you're reading this in the future, the main package might not be as masochistic.
+{{< /alert >}}
+
 Now, I know what you're thinking:
 
 {{< pullquote >}}
