@@ -95,7 +95,11 @@ In Pi-hole, to view the whitelist, you can click on the **Whitelist** option in 
 
 You can also find a very similar looking list under **Group Management > Domains** where you can have the option under "type" to swap a domain between whitelist and blacklist.
 
-The process here seems a bit redundant, to have both whitelist/blacklist, and a global page to show both, and having the option on either page to add the same data to the same list, but that's how Pi-hole has laid things out. The unfortunate thing, is that as far as I can tell, there's no way to automatically add something to a whitelist. You have to add the entry manually via the form.
+The process here seems a bit redundant, to have both whitelist/blacklist, and a global page to show both, and having the option on either page to add the same data to the same list, but that's how Pi-hole has laid things out.
+
+{{< image src="/img/posts/2020/07/wrangling-dns-pt-04-pihole-vs-pfblockerng/pihole-query-log-blacklist.png" >}}
+
+If you want to automatically add something to the whitelist, you can head over to **Query Log**, and each entry will have either a **Whitelist** or **Blacklist** button next to it that you can click. If you need to search, you can filter via the search box, as well.
 
 The one thing you do have here is an option to regex match, which unfortunately, is not a thing that can be done in pfBlockerNG.
 
@@ -103,11 +107,9 @@ The one thing you do have here is an option to regex match, which unfortunately,
 
 {{< image src="/img/posts/2020/07/wrangling-dns-pt-04-pihole-vs-pfblockerng/pfblockerng-whitelist-block-reports.png" title="From the reports list, you can automatically add an entry to the whitelist, by clicking a button next to a domain" >}}
 
-pfBlockerNG has a bit of an advantage here, because you have two options. If you'd like to add a whitelist entry manually, you can go to the **DNSBL** tab, and click the + next to the **DNSBL Whitelist** section to expand it. From there, you can add a new line to add your entry manually to the whitelist, and click {{< hl-text primary >}}Save{{< /hl-text >}} at the bottom to save.
+pfBlockerNG also has two options. If you'd like to add a whitelist entry manually, you can go to the **DNSBL** tab, and click the + next to the **DNSBL Whitelist** section to expand it. From there, you can add a new line to add your entry manually to the whitelist, and click {{< hl-text primary >}}Save{{< /hl-text >}} at the bottom to save.
 
 The other option, which is a bit friendlier, is to navigate to **Reports > Alerts**, and under the **DNSBL** section, this will show you the recently blocked domains, and the source IP that requested them. For each of these domains, you can click the **+** in the entry, and you'll be asked if you want to whitelist only that domain, or if you want to add a wildcard entry, to whitelist the domain, and subdomains.
-
-The interface might seem a bit clunkier here, as Pi-hole definitely has a more polished UI, but this option to just add an entry from the blocked domain reports is a feature I really wish Pi-hole had.
 
 ## Blacklisting domains
 For the most part, since you're probably using either Pi-hole or pfBlockerNG as a DNS blacklist, you probably don't need to specifically blacklist stuff manually. Should you, however, need to keep your kids off of a certain website, or manually add an ad domain that might be slipping through, you do have that option.
@@ -117,6 +119,8 @@ For the most part, since you're probably using either Pi-hole or pfBlockerNG as 
 In Pi-hole, this interface probably looks really familiar to you. Just like the whitelist, we can navigate to **Blacklist** in the side navigation, and we're presented with the same form to add entries, and we can select between normal and wildcard entries, or even do a regex match.
 
 Again, just like the whitelist, we have the same list of what's already there, and the same options for toggling, changing, or deleting entries. And like the whitelist, these can also be found in the list under **Group Management > Domains**.
+
+Should you choose to do this automatically, you have the same option in the **Query Log** page, where you can search the list for a domain, and click the **Blacklist** button to add it to the list.
 
 {{< image src="/img/posts/2020/07/wrangling-dns-pt-04-pihole-vs-pfblockerng/pfblockerng-blacklist-tld.png" title="pfBlockerNG has a built-in TLD blacklist option" >}}
 
