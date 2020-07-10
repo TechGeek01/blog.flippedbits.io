@@ -24,6 +24,12 @@ showDate: true
 comments: false
 summary: "Some people swear by Pi-hole, and some people say pfBlockerNG is better. But how do they compare against each other?"
 ---
+{{< alert info >}}
+This comparison is part of the "Wrangling DNS on Your Network" series because in previous parts, we've worked with both Pi-hole and pfBlockerNG, and a lot of people suggested I do a comparison.
+
+This comparison is a side by side between the two, and as such, it's mainly DNS-focused. This is not meant to recommend pfBlockerNG only for DNS, or to ignore its other features. The comparison is DNS-focused because that's the only thing that can directly be compared to Pi-hole.
+{{< /alert >}}
+
 A short while back, I [installed pfBlockerNG to replace Pi-hole]({{< relref "2020-07-06-wrangling-dns-pt-03-pfblockerng.md" >}}) in an attempt to eliminate the second hop of splitting adblock and local hostname resolution, and get DNS on one device, and to try it out. Many of you wanted to see a comparison between the two, so I thought I'd explain some of the differences.
 
 {{< alert info >}}
