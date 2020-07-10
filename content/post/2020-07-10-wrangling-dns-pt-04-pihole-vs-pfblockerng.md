@@ -309,4 +309,6 @@ Not exactly. pfBlocker is indeed more powerful than Pi-hole in general, but that
 
 If you like playing around, and don't mind the extra setup steps, or the involvement of pfBlockerNG, you can certainly go that route, and it can definitely be used solely for DNS blocking to replace Pi-hole.
 
+Personally, while I like the simplicity of Pi-hole, I love being able to consolidate everything into pfSense, and love how pfBlockerNG is working. For those of you like me, who don't mind a bit of a challenge, or those of you that perhaps would like to use some of the other features of pfBlockerNG to supplement your network security, it's definitely worth a shot. If this sounds like you might be in over your head, you may want to stick with Pi-hole.
+
 Ultimately, the choice is up to you. They both have their strengths, and they both have things that maybe the other one does slightly better. Use this comparison to help your judgement, and decide for yourself!
