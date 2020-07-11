@@ -130,7 +130,11 @@ Should you choose to do this automatically, you have the same option in the **Qu
 
 {{< image src="/img/posts/2020/07/wrangling-dns-pt-04-pihole-vs-pfblockerng/pfblockerng-blacklist-tld.png" title="pfBlockerNG has a built-in TLD blacklist option" >}}
 
-Blacklisting domains in pfBlockerNG is a bit trickier. Under the **DNSBL** tab, there is a section that can be expanded to edit a TLD whitelist or blacklist, but that's not quite what we want, unless we want to specifically block, say, all .com domains.
+Blacklisting domains in pfBlockerNG is a bit trickier. Under the **DNSBL** tab, there is a section that can be expanded to edit a TLD whitelist or blacklist, but that's not quite what we want.
+
+{{< alert info >}}
+TLD blocking is a very powerful feature. Most people think of this as a way to block, say all `.ru` domains. This is a thing you can do, but it's much more powerful than that. See the explanation at the end of this post about what it can do.
+{{< /alert >}}
 
 To actually block specific things, we'll need to dive a bit deeper.
 
@@ -298,6 +302,27 @@ That's basically everything Pi-hole can do, but what about everything else? Ther
 {{< /pullquote >}}
 
 I hear you! pfBlockerNG is a fairly extensive package, and it does a lot of stuff besides just DNS blocking. So what exactly, can it all do?
+
+## TLD White/blacklisting
+The first thing people think of with TLD blocking is to block all of a given TLD, such as all `.com` domains. While you can do that, this TLD blocking has a lot more flexibility.
+
+**TLD blacklists** can be used to block entire TLDs, like `.xyz`. **TLD whitelisting** can only be used in conjunction with **TLD blacklisting** to allow access to domains that are being blocked by a **TLD blacklist**.
+
+The dev, BBcan177, explains it like this:
+
+{{< alert >}}
+When the **TLD** option is enabled, it will automatically determine if a domain and all sub-domains should be blocked.
+
+If `example.com` is added with TLD, then `example.com` and all are blocked.
+
+If you add `example.com` to the DNSBL whitelist, then that domain will not be blocked. And the same with its sub-domains. If there are any other individual sub-domains of `example.com` in your block lists, then only those sub-domains will be blocked.
+
+When you add `.example.com` (note the leading `.`), that will wildcard whitelist `example.com` and all sub-domains.
+
+When you add `example.com` to the TLD exclusion with TLD enabled, that would stop `example.com` from being added as a wildcard blocked domain. So only the specific domains/sub-domains of `example.com` will be blocked. So with TLD Exclusion, you could stop a wildcard block of a domain, and then also add `example.com` to the DNSBL whitelist to allow `example.com` but still block any listed sub-domains that are in the feeds.
+{{< /alert >}}
+
+That's a lot to take in. Basically, TLD white/blacklisting when used in conjunction with specific block rules in the feeds, gives you a ton of control about how certain domains are blocked. BBcan177 explains it in a bit more detail on [this Reddit thread](https://www.reddit.com/r/pfBlockerNG/comments/efwzia/what_is_the_difference_between_wildcard_and_tld/fc2zjwm/) and on the [Netgate forums](https://forum.netgate.com/topic/102967/pfblockerng-v2-1-w-tld/11).
 
 ## IP blocking
 {{< image src="/img/posts/2020/07/wrangling-dns-pt-04-pihole-vs-pfblockerng/pfblockerng-ip.png" >}}
