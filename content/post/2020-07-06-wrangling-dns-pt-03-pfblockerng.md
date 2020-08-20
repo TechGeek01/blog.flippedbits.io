@@ -139,11 +139,11 @@ If you notice, EasyList has a check mark on the left hand side, right by the inf
 
 It's important to note here, that depending on your resources in pfSense, you might not want to enable a ton of lists, as having a lot enabled can potentially slow down your firewall. If you're on a system with less resources, particularly in RAM, you need to be careful here. Add lists slowly, and keep an eye on memory and CPU usage and such.
 
-Scroll down in the DNSBL list until you see the **BBcat177** category, and click the + on the left of the category.
+Scroll down in the DNSBL list until you see the **BBcan177** category, and click the + on the left of the category.
 
 Normally, from here, you can toggle individual lists with the second gray drop down that shows as **OFF** at the moment. For this single list, we could toggle that to **ON**, or, to update the whole list, we can click {{< hl-text primary >}}Enable All{{< /hl-text >}} at the bottom. This will enable the entire group. Also make sure you change the **Action** in the settings group to **Unbound** which will make sure DNS blocking gets properly enabled for the group.
 
-{{< wide-image src="/img/posts/2020/07/wrangling-dns-pt-03-pfblockerng/dnsbl-group-bbcat177.png" >}}
+{{< wide-image src="/img/posts/2020/07/wrangling-dns-pt-03-pfblockerng/dnsbl-group-bbcan177.png" >}}
 
 Once you've enabled everything in the list, and changed the action to Unbound, scroll to the bottom and click {{< hl-text primary >}}Save{{< /hl-text >}}. You can repeat this process for each list or feed you want to add. If all of this went according to plan, clicking the **DNSBL Groups** tab to bring you to the group list should look like this.
 
