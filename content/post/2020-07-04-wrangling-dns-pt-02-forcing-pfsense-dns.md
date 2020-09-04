@@ -93,7 +93,7 @@ Next, head over to **Firewall > NAT > Port Forward** and click {{< hl-text green
 * **Protocol:** TCP/UDP
 * **Destination:** Invert Match **checked**, LAN Address
 * **Destination Port Range:** 53 (DNS)
-* **Redirect Target IP:** 127.0.0.1
+* **Redirect Target IP:** [*Your LAN IP*]
 * **Redirect Target Port:** 53 (DNS)
 * **Description:** Redirect DNS
 * **NAT Reflection:** Disable
@@ -117,4 +117,4 @@ If you're running multiple VLANs, or you have other interfaces you want to apply
 
 If your setup is like mine, you might not want to necessarily restrict DNS to only pfSense, as we currently have Pi-hole doing ad blocking. In this case, you can create an alias in the firewall with allowed DNS addresses, and instead of defining **LAN address** in the port forward rule, we can define the alias instead. This way, instead of matching and redirecting all DNS traffic that's not to the pfSense interface address, we can make an alias that'll allow it to only redirect DNS not matching _either_ the Pi-hole, or the pfSense interface.
 
-If you want, you can also tweak the redirect from `127.0.0.1` and put the Pi-hole address instead, to force DNS to go through the Pi-hole. This could be useful for things like Google Home, or Alexa devices. The only downside is that if the port forward forcibly redirects DNS to Pi-hole instead, DNS will stop working if the Pi-hole is down for some reason.
+If you want, you can also tweak the redirect from your LAN address, and put the Pi-hole address instead, to force DNS to go through the Pi-hole. This could be useful for things like Google Home, or Alexa devices. The only downside is that if the port forward forcibly redirects DNS to Pi-hole instead, DNS will stop working if the Pi-hole is down for some reason.
