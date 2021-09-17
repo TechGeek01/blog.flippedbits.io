@@ -31,9 +31,7 @@ The largest problem I see by far is that people don't take backups at all, or th
 
 Let me preface what I'm about to say with "I get it." I used to be this person. I used to not take proper backups, and most of this didn't matter all that much. At some point, I lost data on a 10 year old external hard drive, and replacing that data meant redoing a lot of school work. I've been burned by data loss in the past, and my mindset is now set to "never again," and while the backups I take might be overkill for most people, it's a proper system that I know I can rely on if I need to get any of it back.
 
-{{< alert info no-icon >}}
-Oh, I don't need backups. There's nothing important on here at all.
-{{< /alert >}}
+> Oh, I don't need backups. There's nothing important on here at all.
 
 I don't buy that. Everyone has stuff that's important to them, whether they know it or not. If it's "just some work documents" or "just some pictures I took a few years ago on vacation" then it may not be the end of the world. But the fact of the matter is that if you lose these things, they're either going to be an absolute pain, and require a lot of work to replace, or they're not replaceable at all. If you have data that has any sort of value to you, it should be backed up.
 
@@ -45,9 +43,7 @@ The rule that I tell people when I explain this is that if you think you have en
 
 If there's anything I've learned, it's that if data you care about doesn't exist in at least 3 places, it doesn't exist at all.
 
-{{< alert info no-icon >}}
-Yeah, I take backups. I have an external hard drive I use.
-{{< /alert >}}
+> Yeah, I take backups. I have an external hard drive I use.
 
 Of the small subset of people I ask that actually take backups, most of the time, something like this is the case. If you're using an external drive to back up your data, that's great. What's worse is when it's a 10 year old drive, and they don't remember where they got it from. And their backups are manually copying some files over every 6 months when they plug it in.
 
@@ -75,9 +71,7 @@ In this case, there are two options. You can either back up your data onto a sec
 
 RAID comes in many forms, but at its core, it's meant to provide speed (in some cases, at an increased risk of data loss), or in our case, redundancy, so that it's harder to lose your data. It does this by sacrificing in some way, part of the capacity to add more protection. If you have one drive of redundancy in a RAID array, you can lose one drive and still have your data. It's only when you lose two drives that it becomes a problem.
 
-{{< alert info no-icon >}}
-Well, that certainly sounds an awful lot like taking backups, doesn't it?
-{{< /alert >}}
+> Well, that certainly sounds an awful lot like taking backups, doesn't it?
 
 Well yeah, it does. But they're not the same thing. RAID protects you against data loss *due to drive failure*, but losing your data due to hardware failure is a very small subset of "losing your data." If a drive in a RAID array fails, your data is fine\*. If, however, you accidentally delete a file, RAID will not protect you. Fundamentally, that array functions as a larger virtual drive, and just like a single drive, will not protect you from deletion, corruption, or the like.
 

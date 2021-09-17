@@ -297,9 +297,7 @@ Because these updates involve the Pi-hole system as a whole, or the web GUI itse
 This update also takes care of checking on adlists, so you won't have to update gravity later, since it's done for you during the system update.
 
 ## So what's next?
-{{< pullquote >}}
-That's basically everything Pi-hole can do, but what about everything else? There's a whole bunch more options and settings in pfBlockerNG that I don't know what they do yet!
-{{< /pullquote >}}
+> That's basically everything Pi-hole can do, but what about everything else? There's a whole bunch more options and settings in pfBlockerNG that I don't know what they do yet!
 
 I hear you! pfBlockerNG is a fairly extensive package, and it does a lot of stuff besides just DNS blocking. So what exactly, can it all do?
 
@@ -336,9 +334,7 @@ If you wanted to, you can also handle geographical blocking of IPs. This is a bi
 If you have a multi-WAN setup, or use a VPN, policy-based routing can be useful for dealing with traffic flow. Sometimes, you might hit a site that doesn't respond well to a VPN, or you might want to direct traffic from most sources through one WAN interface, but specific clients or different subnets through another.
 
 ## Conclusion
-{{< pullquote >}}
-So, clearly, pfBlockerNG can do a lot more than Pi-hole, so that means I should install pfBlockerNG, right?
-{{< /pullquote >}}
+> So, clearly, pfBlockerNG can do a lot more than Pi-hole, so that means I should install pfBlockerNG, right?
 
 Not exactly. pfBlocker is indeed more powerful than Pi-hole in general, but that's not always the best solution. If the only thing you want is a dead-simple DNS-based adblock solution, Pi-hole is probably the better choice.
 
