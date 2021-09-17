@@ -75,6 +75,8 @@ RAID comes in many forms, but at its core, it's meant to provide speed (in some 
 
 Well yeah, it does. But they're not the same thing. RAID protects you against data loss *due to drive failure*, but losing your data due to hardware failure is a very small subset of "losing your data." If a drive in a RAID array fails, your data is fine\*. If, however, you accidentally delete a file, RAID will not protect you. Fundamentally, that array functions as a larger virtual drive, and just like a single drive, will not protect you from deletion, corruption, or the like.
 
+> RAID will happily replicate all your changes to the whole array. Even the ones you don't want it to.
+
 {{< alert info >}}
 \* Technically, hard drives occasionally have read errors, where a chuck of data on the drive can't properly be read. While your data as a whole doesn't go away if RAID protects you with redundancy, if you lose a drive, and have no other protection, there's still the chance you can hit a read error trying to read the data in a file, in which case, part of that file may become corrupted. An intact RAID array protects against this, but a degraded one has the same risk of it happening as a single drive does.
 {{< /alert >}}
