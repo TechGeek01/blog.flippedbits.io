@@ -41,7 +41,7 @@
 <link rel=canonical href=https://blog.flippedbits.io/posts/2020-07-10-wrangling-dns-pt-04-pihole-vs-pfblockerng/>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin=anonymous referrerpolicy=no-referrer>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin=anonymous referrerpolicy=no-referrer>
-<link rel=stylesheet href=https://blog.flippedbits.io/css/style-c5yjx2losbmkttdif4mskx5f9pqjjquywurgngxfvceyyrtyatseix5hpd.min.css>
+<link rel=stylesheet href=https://blog.flippedbits.io/css/style-8wq9cwjemt0dk532dhttp48fwretmmmm95f7njulto7vefeufdnasgq9a.min.css>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-170794764-1','auto'),ga('send','pageview'))</script>
 </head>
 <body>
@@ -372,10 +372,8 @@ July 10, 2020
 <p>Because these updates involve the Pi-hole system as a whole, or the web GUI itself, you can&rsquo;t self update from the web interface, since these updates typically need to replace parts of the web GUI, or restart it, or the Pi-hole service entirely. In order to actually perform these updates, you&rsquo;ll need to issue <code>pihole -up</code> from the terminal.</p>
 <p>This update also takes care of checking on adlists, so you won&rsquo;t have to update gravity later, since it&rsquo;s done for you during the system update.</p>
 <h2 id=so-whats-next>So what&rsquo;s next?</h2>
-<blockquote class=pullquote>
-<p>
-That's basically everything Pi-hole can do, but what about everything else? There's a whole bunch more options and settings in pfBlockerNG that I don't know what they do yet!
-</p>
+<blockquote>
+<p>That&rsquo;s basically everything Pi-hole can do, but what about everything else? There&rsquo;s a whole bunch more options and settings in pfBlockerNG that I don&rsquo;t know what they do yet!</p>
 </blockquote>
 <p>I hear you! pfBlockerNG is a fairly extensive package, and it does a lot of stuff besides just DNS blocking. So what exactly, can it all do?</p>
 <h2 id=tld-whiteblacklisting>TLD White/blacklisting</h2>
@@ -401,10 +399,8 @@ That's basically everything Pi-hole can do, but what about everything else? Ther
 <h2 id=policy-based-routing>Policy-based routing</h2>
 <p>If you have a multi-WAN setup, or use a VPN, policy-based routing can be useful for dealing with traffic flow. Sometimes, you might hit a site that doesn&rsquo;t respond well to a VPN, or you might want to direct traffic from most sources through one WAN interface, but specific clients or different subnets through another.</p>
 <h2 id=conclusion>Conclusion</h2>
-<blockquote class=pullquote>
-<p>
-So, clearly, pfBlockerNG can do a lot more than Pi-hole, so that means I should install pfBlockerNG, right?
-</p>
+<blockquote>
+<p>So, clearly, pfBlockerNG can do a lot more than Pi-hole, so that means I should install pfBlockerNG, right?</p>
 </blockquote>
 <p>Not exactly. pfBlocker is indeed more powerful than Pi-hole in general, but that&rsquo;s not always the best solution. If the only thing you want is a dead-simple DNS-based adblock solution, Pi-hole is probably the better choice.</p>
 <p>If you like playing around, and don&rsquo;t mind the extra setup steps, or the involvement of pfBlockerNG, you can certainly go that route, and it can definitely be used solely for DNS blocking to replace Pi-hole.</p>
@@ -559,7 +555,7 @@ United States
 <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin=anonymous referrerpolicy=no-referrer></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin=anonymous referrerpolicy=no-referrer></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin=anonymous referrerpolicy=no-referrer></script>
-<script src=https://blog.flippedbits.io/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js></script>
+<script src=https://blog.flippedbits.io/js/script-k098bcs6cnvhyxawjwpwt88st6nvvdrnhqc6tytvmax3eeviyshusassfxj2.min.js></script>
 <script>$(document).ready(function(){hljs.configure({classPrefix:'',useBR:!1}),$('pre.code-highlight > code, pre > code').each(function(b,a){$(this).hasClass('codeblock')||$(this).addClass('codeblock'),hljs.highlightBlock(a)})})</script>
 </body>
 </html>
