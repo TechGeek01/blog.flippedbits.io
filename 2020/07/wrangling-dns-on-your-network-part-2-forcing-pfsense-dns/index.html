@@ -1,10 +1,10 @@
 <!doctype html><html lang=en-us>
 <head>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Wrangling DNS on Your Network, Part 2: Forcing pfSense DNS","image":"https://blog.flippedbits.io/img/posts/2020/07/wrangling-dns-pt-02-forcing-pfsense-dns/header.png","datePublished":"2020-07-04T00:00:00Z","dateModified":"2020-07-04T00:00:00Z","author":{"@type":"Person","name":"Andy Yasger","image":"https://blog.flippedbits.io/img/profile.jpg"},"mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/blog.flippedbits.io\/posts\/2020-07-04-wrangling-dns-pt-02-forcing-pfsense-dns\/"},"publisher":{"@type":"Organization","name":"FlippedBits.io","logo":{"@type":"ImageObject","url":"https://blog.flippedbits.io/img/profile.jpg"}},"description":"Now that we have DNS set up for accessing servers and such locally, and we have adblock in place, we might want to prevent things like smart home devices from using their own DNS servers.","keywords":[]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Wrangling DNS on Your Network, Part 2: Forcing pfSense DNS","image":"https://blog.flippedbits.io/img/posts/2020/07/wrangling-dns-pt-02-forcing-pfsense-dns/header.png","datePublished":"2020-07-04T00:00:00Z","dateModified":"2020-07-04T00:00:00Z","author":{"@type":"Person","name":"Andy Yasger","image":"https://blog.flippedbits.io/img/profile.jpg"},"mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/blog.flippedbits.io\/2020\/07\/wrangling-dns-on-your-network-part-2-forcing-pfsense-dns\/"},"publisher":{"@type":"Organization","name":"FlippedBits.io","logo":{"@type":"ImageObject","url":"https://blog.flippedbits.io/img/profile.jpg"}},"description":"Now that we have DNS set up for accessing servers and such locally, and we have adblock in place, we might want to prevent things like smart home devices from using their own DNS servers.","keywords":[]}</script>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=generator content="Hugo 0.88.1 with theme Tranquilpeak 0.5.2-BETA">
+<meta name=generator content="Hugo 0.92.0 with theme Tranquilpeak 0.5.2-BETA">
 <meta name=author content="Andy Yasger">
 <meta name=keywords content>
 <meta name=description content="Now that we have DNS set up for accessing servers and such locally, and we have adblock in place, we might want to prevent things like smart home devices from using their own DNS servers.">
@@ -12,8 +12,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Wrangling DNS on Your Network, Part 2: Forcing pfSense DNS">
 <meta name=twitter:title content="Wrangling DNS on Your Network, Part 2: Forcing pfSense DNS">
-<meta property="og:url" content="https://blog.flippedbits.io/posts/2020-07-04-wrangling-dns-pt-02-forcing-pfsense-dns/">
-<meta property="twitter:url" content="https://blog.flippedbits.io/posts/2020-07-04-wrangling-dns-pt-02-forcing-pfsense-dns/">
+<meta property="og:url" content="https://blog.flippedbits.io/2020/07/wrangling-dns-on-your-network-part-2-forcing-pfsense-dns/">
+<meta property="twitter:url" content="https://blog.flippedbits.io/2020/07/wrangling-dns-on-your-network-part-2-forcing-pfsense-dns/">
 <meta property="og:site_name" content="FlippedBits.io">
 <meta property="og:description" content="Now that we have DNS set up for accessing servers and such locally, and we have adblock in place, we might want to prevent things like smart home devices from using their own DNS servers.">
 <meta name=twitter:description content="Now that we have DNS set up for accessing servers and such locally, and we have adblock in place, we might want to prevent things like smart home devices from using their own DNS servers.">
@@ -39,7 +39,7 @@
 <meta property="twitter:image" content="https://blog.flippedbits.io/img/posts/2020/07/wrangling-dns-pt-02-forcing-pfsense-dns/header.png">
 <title>Wrangling DNS on Your Network, Part 2: Forcing pfSense DNS</title>
 <link rel=icon href=https://blog.flippedbits.io/favicon.png>
-<link rel=canonical href=https://blog.flippedbits.io/posts/2020-07-04-wrangling-dns-pt-02-forcing-pfsense-dns/>
+<link rel=canonical href=https://blog.flippedbits.io/2020/07/wrangling-dns-on-your-network-part-2-forcing-pfsense-dns/>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin=anonymous referrerpolicy=no-referrer>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin=anonymous referrerpolicy=no-referrer>
 <link rel=stylesheet href=https://blog.flippedbits.io/css/style-8wq9cwjemt0dk532dhttp48fwretmmmm95f7njulto7vefeufdnasgq9a.min.css>
@@ -144,7 +144,7 @@ July 4, 2020
 <div class=main-content-wrap>
 <div class="alert info">
 <p><p>This is part of a multi-part series on DNS.</p>
-<p>In part 3, we <a href=https://blog.flippedbits.io/posts/2020-07-06-wrangling-dns-pt-03-pfblockerng/>replace Pi-hole with pfBlockerNG</a> to attempt to put all our DNS stuff on one device.</p>
+<p>In part 3, we <a href=https://blog.flippedbits.io/2020/07/wrangling-dns-on-your-network-part-3-pfblockerng/>replace Pi-hole with pfBlockerNG</a> to attempt to put all our DNS stuff on one device.</p>
 </p>
 </div>
 <h2 id=an-addendum>An addendum</h2>
@@ -165,7 +165,7 @@ July 4, 2020
 </ul>
 <p>Once you <span class="highlight-text primary">Save</span>, you should be all set with DNS over TLS!</p>
 <h2 id=on-to-the-dns-forcing>On to the DNS forcing&mldr;</h2>
-<p>So we previously <a href=https://blog.flippedbits.io/posts/2020-07-03-wrangling-dns-pt-01-pihole/>set up Pi-hole for DNS adblock, and pfSense to handle local hostnames</a>. Now that adblock is happening everywhere, there&rsquo;s another slight problem you might run into. You might notice that DHCP is handing out the correct addresses, and clients are being told to use Pi-hole for the DNS servers. And if you&rsquo;re running static stuff like server VMs and such, you have the correct statically-assigned DNS servers too!</p>
+<p>So we previously <a href=https://blog.flippedbits.io/2020/07/wrangling-dns-on-your-network-part-1-pi-hole/>set up Pi-hole for DNS adblock, and pfSense to handle local hostnames</a>. Now that adblock is happening everywhere, there&rsquo;s another slight problem you might run into. You might notice that DHCP is handing out the correct addresses, and clients are being told to use Pi-hole for the DNS servers. And if you&rsquo;re running static stuff like server VMs and such, you have the correct statically-assigned DNS servers too!</p>
 <p>So then, <em>why does your Alexa still have ads when you listen to music?</em></p>
 <p>The problem that we&rsquo;ve run into here is that some devices, even if you tell them what DNS servers to use, hardcode their own DNS servers anyway, and don&rsquo;t listen to the DHCP offerings. The good news is that there&rsquo;s a solution to this problem.</p>
 <h2 id=lets-learn-about-nat>Let&rsquo;s learn about NAT</h2>
@@ -231,13 +231,13 @@ July 4, 2020
 <nav>
 <ul class="post-actions post-action-nav">
 <li class=post-action>
-<a class="post-action-btn btn btn--default tooltip--top" href=https://blog.flippedbits.io/posts/2020-07-06-wrangling-dns-pt-03-pfblockerng/ data-tooltip="Wrangling DNS on Your Network, Part 3: pfBlockerNG" aria-label="NEXT: Wrangling DNS on Your Network, Part 3: pfBlockerNG">
+<a class="post-action-btn btn btn--default tooltip--top" href=https://blog.flippedbits.io/2020/07/wrangling-dns-on-your-network-part-3-pfblockerng/ data-tooltip="Wrangling DNS on Your Network, Part 3: pfBlockerNG" aria-label="NEXT: Wrangling DNS on Your Network, Part 3: pfBlockerNG">
 <i class="fa fa-angle-left"></i>
 <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
 </a>
 </li>
 <li class=post-action>
-<a class="post-action-btn btn btn--default tooltip--top" href=https://blog.flippedbits.io/posts/2020-07-03-wrangling-dns-pt-01-pihole/ data-tooltip="Wrangling DNS on Your Network, Part 1: Pi-hole" aria-label="PREVIOUS: Wrangling DNS on Your Network, Part 1: Pi-hole">
+<a class="post-action-btn btn btn--default tooltip--top" href=https://blog.flippedbits.io/2020/07/wrangling-dns-on-your-network-part-1-pi-hole/ data-tooltip="Wrangling DNS on Your Network, Part 1: Pi-hole" aria-label="PREVIOUS: Wrangling DNS on Your Network, Part 1: Pi-hole">
 <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
 <i class="fa fa-angle-right"></i>
 </a>
@@ -251,17 +251,17 @@ July 4, 2020
 </a>
 </li>
 <li class="post-action hide-xs">
-<a class="post-action-btn btn btn--default" target=new href="https://www.facebook.com/sharer/sharer.php?u=https://blog.flippedbits.io/posts/2020-07-04-wrangling-dns-pt-02-forcing-pfsense-dns/" title="Share on Facebook" aria-label="Share on Facebook">
+<a class="post-action-btn btn btn--default" target=new href="https://www.facebook.com/sharer/sharer.php?u=https://blog.flippedbits.io/2020/07/wrangling-dns-on-your-network-part-2-forcing-pfsense-dns/" title="Share on Facebook" aria-label="Share on Facebook">
 <i class=fa-facebook-official aria-hidden=true></i>
 </a>
 </li>
 <li class="post-action hide-xs">
-<a class="post-action-btn btn btn--default" target=new href="https://twitter.com/intent/tweet?text=https://blog.flippedbits.io/posts/2020-07-04-wrangling-dns-pt-02-forcing-pfsense-dns/" title="Share on Twitter" aria-label="Share on Twitter">
+<a class="post-action-btn btn btn--default" target=new href="https://twitter.com/intent/tweet?text=https://blog.flippedbits.io/2020/07/wrangling-dns-on-your-network-part-2-forcing-pfsense-dns/" title="Share on Twitter" aria-label="Share on Twitter">
 <i class=fa-twitter aria-hidden=true></i>
 </a>
 </li>
 <li class="post-action hide-xs">
-<a class="post-action-btn btn btn--default" target=new href="https://plus.google.com/share?url=https://blog.flippedbits.io/posts/2020-07-04-wrangling-dns-pt-02-forcing-pfsense-dns/" title="Share on Google+" aria-label="Share on Google+">
+<a class="post-action-btn btn btn--default" target=new href="https://plus.google.com/share?url=https://blog.flippedbits.io/2020/07/wrangling-dns-on-your-network-part-2-forcing-pfsense-dns/" title="Share on Google+" aria-label="Share on Google+">
 <i class=fa-google-plus aria-hidden=true></i>
 </a>
 </li>
@@ -276,7 +276,7 @@ July 4, 2020
 </article>
 <footer id=footer class=main-content-wrap>
 <span class=copyrights>
-&copy; 2021 Andy Yasger. All Rights Reserved
+&copy; 2022 Andy Yasger. All Rights Reserved
 </span>
 </footer>
 </div>
@@ -285,13 +285,13 @@ July 4, 2020
 <nav>
 <ul class="post-actions post-action-nav">
 <li class=post-action>
-<a class="post-action-btn btn btn--default tooltip--top" href=https://blog.flippedbits.io/posts/2020-07-06-wrangling-dns-pt-03-pfblockerng/ data-tooltip="Wrangling DNS on Your Network, Part 3: pfBlockerNG" aria-label="NEXT: Wrangling DNS on Your Network, Part 3: pfBlockerNG">
+<a class="post-action-btn btn btn--default tooltip--top" href=https://blog.flippedbits.io/2020/07/wrangling-dns-on-your-network-part-3-pfblockerng/ data-tooltip="Wrangling DNS on Your Network, Part 3: pfBlockerNG" aria-label="NEXT: Wrangling DNS on Your Network, Part 3: pfBlockerNG">
 <i class="fa fa-angle-left"></i>
 <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
 </a>
 </li>
 <li class=post-action>
-<a class="post-action-btn btn btn--default tooltip--top" href=https://blog.flippedbits.io/posts/2020-07-03-wrangling-dns-pt-01-pihole/ data-tooltip="Wrangling DNS on Your Network, Part 1: Pi-hole" aria-label="PREVIOUS: Wrangling DNS on Your Network, Part 1: Pi-hole">
+<a class="post-action-btn btn btn--default tooltip--top" href=https://blog.flippedbits.io/2020/07/wrangling-dns-on-your-network-part-1-pi-hole/ data-tooltip="Wrangling DNS on Your Network, Part 1: Pi-hole" aria-label="PREVIOUS: Wrangling DNS on Your Network, Part 1: Pi-hole">
 <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
 <i class="fa fa-angle-right"></i>
 </a>
@@ -305,17 +305,17 @@ July 4, 2020
 </a>
 </li>
 <li class="post-action hide-xs">
-<a class="post-action-btn btn btn--default" target=new href="https://www.facebook.com/sharer/sharer.php?u=https://blog.flippedbits.io/posts/2020-07-04-wrangling-dns-pt-02-forcing-pfsense-dns/" title="Share on Facebook" aria-label="Share on Facebook">
+<a class="post-action-btn btn btn--default" target=new href="https://www.facebook.com/sharer/sharer.php?u=https://blog.flippedbits.io/2020/07/wrangling-dns-on-your-network-part-2-forcing-pfsense-dns/" title="Share on Facebook" aria-label="Share on Facebook">
 <i class=fa-facebook-official aria-hidden=true></i>
 </a>
 </li>
 <li class="post-action hide-xs">
-<a class="post-action-btn btn btn--default" target=new href="https://twitter.com/intent/tweet?text=https://blog.flippedbits.io/posts/2020-07-04-wrangling-dns-pt-02-forcing-pfsense-dns/" title="Share on Twitter" aria-label="Share on Twitter">
+<a class="post-action-btn btn btn--default" target=new href="https://twitter.com/intent/tweet?text=https://blog.flippedbits.io/2020/07/wrangling-dns-on-your-network-part-2-forcing-pfsense-dns/" title="Share on Twitter" aria-label="Share on Twitter">
 <i class=fa-twitter aria-hidden=true></i>
 </a>
 </li>
 <li class="post-action hide-xs">
-<a class="post-action-btn btn btn--default" target=new href="https://plus.google.com/share?url=https://blog.flippedbits.io/posts/2020-07-04-wrangling-dns-pt-02-forcing-pfsense-dns/" title="Share on Google+" aria-label="Share on Google+">
+<a class="post-action-btn btn btn--default" target=new href="https://plus.google.com/share?url=https://blog.flippedbits.io/2020/07/wrangling-dns-on-your-network-part-2-forcing-pfsense-dns/" title="Share on Google+" aria-label="Share on Google+">
 <i class=fa-google-plus aria-hidden=true></i>
 </a>
 </li>
@@ -331,17 +331,17 @@ July 4, 2020
 <i id=btn-close-shareoptions class="fa fa-times"></i>
 <ul class=share-options>
 <li class=share-option>
-<a class=share-option-btn target=new href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.flippedbits.io%2Fposts%2F2020-07-04-wrangling-dns-pt-02-forcing-pfsense-dns%2F" aria-label="Share on Facebook">
+<a class=share-option-btn target=new href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.flippedbits.io%2F2020%2F07%2Fwrangling-dns-on-your-network-part-2-forcing-pfsense-dns%2F" aria-label="Share on Facebook">
 <i class=fa-facebook-official aria-hidden=true></i><span>Share on Facebook</span>
 </a>
 </li>
 <li class=share-option>
-<a class=share-option-btn target=new href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fblog.flippedbits.io%2Fposts%2F2020-07-04-wrangling-dns-pt-02-forcing-pfsense-dns%2F" aria-label="Share on Twitter">
+<a class=share-option-btn target=new href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fblog.flippedbits.io%2F2020%2F07%2Fwrangling-dns-on-your-network-part-2-forcing-pfsense-dns%2F" aria-label="Share on Twitter">
 <i class=fa-twitter aria-hidden=true></i><span>Share on Twitter</span>
 </a>
 </li>
 <li class=share-option>
-<a class=share-option-btn target=new href="https://plus.google.com/share?url=https%3A%2F%2Fblog.flippedbits.io%2Fposts%2F2020-07-04-wrangling-dns-pt-02-forcing-pfsense-dns%2F" aria-label="Share on Google+">
+<a class=share-option-btn target=new href="https://plus.google.com/share?url=https%3A%2F%2Fblog.flippedbits.io%2F2020%2F07%2Fwrangling-dns-on-your-network-part-2-forcing-pfsense-dns%2F" aria-label="Share on Google+">
 <i class=fa-google-plus aria-hidden=true></i><span>Share on Google+</span>
 </a>
 </li>

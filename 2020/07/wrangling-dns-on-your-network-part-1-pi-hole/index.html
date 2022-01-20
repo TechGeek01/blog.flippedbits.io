@@ -1,10 +1,10 @@
 <!doctype html><html lang=en-us>
 <head>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Wrangling DNS on Your Network, Part 1: Pi-hole","image":"https://blog.flippedbits.io/img/posts/2020/07/wrangling-dns-pt-01-pihole/header.png","datePublished":"2020-07-03T00:00:00Z","dateModified":"2020-07-03T00:00:00Z","author":{"@type":"Person","name":"Andy Yasger","image":"https://blog.flippedbits.io/img/profile.jpg"},"mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/blog.flippedbits.io\/posts\/2020-07-03-wrangling-dns-pt-01-pihole\/"},"publisher":{"@type":"Organization","name":"FlippedBits.io","logo":{"@type":"ImageObject","url":"https://blog.flippedbits.io/img/profile.jpg"}},"description":"DNS can be confusing, even more so when you have multiple sources for information. Let\u0026rsquo;s get that sorted\u0026hellip;","keywords":[]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Wrangling DNS on Your Network, Part 1: Pi-hole","image":"https://blog.flippedbits.io/img/posts/2020/07/wrangling-dns-pt-01-pihole/header.png","datePublished":"2020-07-03T00:00:00Z","dateModified":"2020-07-03T00:00:00Z","author":{"@type":"Person","name":"Andy Yasger","image":"https://blog.flippedbits.io/img/profile.jpg"},"mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/blog.flippedbits.io\/2020\/07\/wrangling-dns-on-your-network-part-1-pi-hole\/"},"publisher":{"@type":"Organization","name":"FlippedBits.io","logo":{"@type":"ImageObject","url":"https://blog.flippedbits.io/img/profile.jpg"}},"description":"DNS can be confusing, even more so when you have multiple sources for information. Let\u0026rsquo;s get that sorted\u0026hellip;","keywords":[]}</script>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=generator content="Hugo 0.88.1 with theme Tranquilpeak 0.5.2-BETA">
+<meta name=generator content="Hugo 0.92.0 with theme Tranquilpeak 0.5.2-BETA">
 <meta name=author content="Andy Yasger">
 <meta name=keywords content>
 <meta name=description content="DNS can be confusing, even more so when you have multiple sources for information. Let&rsquo;s get that sorted&mldr;">
@@ -12,8 +12,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Wrangling DNS on Your Network, Part 1: Pi-hole">
 <meta name=twitter:title content="Wrangling DNS on Your Network, Part 1: Pi-hole">
-<meta property="og:url" content="https://blog.flippedbits.io/posts/2020-07-03-wrangling-dns-pt-01-pihole/">
-<meta property="twitter:url" content="https://blog.flippedbits.io/posts/2020-07-03-wrangling-dns-pt-01-pihole/">
+<meta property="og:url" content="https://blog.flippedbits.io/2020/07/wrangling-dns-on-your-network-part-1-pi-hole/">
+<meta property="twitter:url" content="https://blog.flippedbits.io/2020/07/wrangling-dns-on-your-network-part-1-pi-hole/">
 <meta property="og:site_name" content="FlippedBits.io">
 <meta property="og:description" content="DNS can be confusing, even more so when you have multiple sources for information. Let&rsquo;s get that sorted&mldr;">
 <meta name=twitter:description content="DNS can be confusing, even more so when you have multiple sources for information. Let&rsquo;s get that sorted&mldr;">
@@ -37,7 +37,7 @@
 <meta property="twitter:image" content="https://blog.flippedbits.io/img/posts/2020/07/wrangling-dns-pt-01-pihole/header.png">
 <title>Wrangling DNS on Your Network, Part 1: Pi-hole</title>
 <link rel=icon href=https://blog.flippedbits.io/favicon.png>
-<link rel=canonical href=https://blog.flippedbits.io/posts/2020-07-03-wrangling-dns-pt-01-pihole/>
+<link rel=canonical href=https://blog.flippedbits.io/2020/07/wrangling-dns-on-your-network-part-1-pi-hole/>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin=anonymous referrerpolicy=no-referrer>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin=anonymous referrerpolicy=no-referrer>
 <link rel=stylesheet href=https://blog.flippedbits.io/css/style-8wq9cwjemt0dk532dhttp48fwretmmmm95f7njulto7vefeufdnasgq9a.min.css>
@@ -142,7 +142,7 @@ July 3, 2020
 <div class=main-content-wrap>
 <div class="alert info">
 <p><p>This is part of a multi-part series, in which I tackle setting up and configuring DNS on the network.</p>
-<p>In part 2, we <a href=https://blog.flippedbits.io/posts/2020-07-04-wrangling-dns-pt-02-forcing-pfsense-dns/>force DNS to be routed through pfSense</a> to prevent devices from using their own DNS in place of the ones handed in DHCP.</p>
+<p>In part 2, we <a href=https://blog.flippedbits.io/2020/07/wrangling-dns-on-your-network-part-2-forcing-pfsense-dns/>force DNS to be routed through pfSense</a> to prevent devices from using their own DNS in place of the ones handed in DHCP.</p>
 <p>This is still ongoing!</p>
 </p>
 </div>
@@ -215,13 +215,13 @@ July 3, 2020
 <nav>
 <ul class="post-actions post-action-nav">
 <li class=post-action>
-<a class="post-action-btn btn btn--default tooltip--top" href=https://blog.flippedbits.io/posts/2020-07-04-wrangling-dns-pt-02-forcing-pfsense-dns/ data-tooltip="Wrangling DNS on Your Network, Part 2: Forcing pfSense DNS" aria-label="NEXT: Wrangling DNS on Your Network, Part 2: Forcing pfSense DNS">
+<a class="post-action-btn btn btn--default tooltip--top" href=https://blog.flippedbits.io/2020/07/wrangling-dns-on-your-network-part-2-forcing-pfsense-dns/ data-tooltip="Wrangling DNS on Your Network, Part 2: Forcing pfSense DNS" aria-label="NEXT: Wrangling DNS on Your Network, Part 2: Forcing pfSense DNS">
 <i class="fa fa-angle-left"></i>
 <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
 </a>
 </li>
 <li class=post-action>
-<a class="post-action-btn btn btn--default tooltip--top" href=https://blog.flippedbits.io/posts/2020-07-01-how-do-i-segment-my-network/ data-tooltip="How Do I Segment My Network?" aria-label="PREVIOUS: How Do I Segment My Network?">
+<a class="post-action-btn btn btn--default tooltip--top" href=https://blog.flippedbits.io/2020/07/how-do-i-segment-my-network/ data-tooltip="How Do I Segment My Network?" aria-label="PREVIOUS: How Do I Segment My Network?">
 <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
 <i class="fa fa-angle-right"></i>
 </a>
@@ -235,17 +235,17 @@ July 3, 2020
 </a>
 </li>
 <li class="post-action hide-xs">
-<a class="post-action-btn btn btn--default" target=new href="https://www.facebook.com/sharer/sharer.php?u=https://blog.flippedbits.io/posts/2020-07-03-wrangling-dns-pt-01-pihole/" title="Share on Facebook" aria-label="Share on Facebook">
+<a class="post-action-btn btn btn--default" target=new href="https://www.facebook.com/sharer/sharer.php?u=https://blog.flippedbits.io/2020/07/wrangling-dns-on-your-network-part-1-pi-hole/" title="Share on Facebook" aria-label="Share on Facebook">
 <i class=fa-facebook-official aria-hidden=true></i>
 </a>
 </li>
 <li class="post-action hide-xs">
-<a class="post-action-btn btn btn--default" target=new href="https://twitter.com/intent/tweet?text=https://blog.flippedbits.io/posts/2020-07-03-wrangling-dns-pt-01-pihole/" title="Share on Twitter" aria-label="Share on Twitter">
+<a class="post-action-btn btn btn--default" target=new href="https://twitter.com/intent/tweet?text=https://blog.flippedbits.io/2020/07/wrangling-dns-on-your-network-part-1-pi-hole/" title="Share on Twitter" aria-label="Share on Twitter">
 <i class=fa-twitter aria-hidden=true></i>
 </a>
 </li>
 <li class="post-action hide-xs">
-<a class="post-action-btn btn btn--default" target=new href="https://plus.google.com/share?url=https://blog.flippedbits.io/posts/2020-07-03-wrangling-dns-pt-01-pihole/" title="Share on Google+" aria-label="Share on Google+">
+<a class="post-action-btn btn btn--default" target=new href="https://plus.google.com/share?url=https://blog.flippedbits.io/2020/07/wrangling-dns-on-your-network-part-1-pi-hole/" title="Share on Google+" aria-label="Share on Google+">
 <i class=fa-google-plus aria-hidden=true></i>
 </a>
 </li>
@@ -260,7 +260,7 @@ July 3, 2020
 </article>
 <footer id=footer class=main-content-wrap>
 <span class=copyrights>
-&copy; 2021 Andy Yasger. All Rights Reserved
+&copy; 2022 Andy Yasger. All Rights Reserved
 </span>
 </footer>
 </div>
@@ -269,13 +269,13 @@ July 3, 2020
 <nav>
 <ul class="post-actions post-action-nav">
 <li class=post-action>
-<a class="post-action-btn btn btn--default tooltip--top" href=https://blog.flippedbits.io/posts/2020-07-04-wrangling-dns-pt-02-forcing-pfsense-dns/ data-tooltip="Wrangling DNS on Your Network, Part 2: Forcing pfSense DNS" aria-label="NEXT: Wrangling DNS on Your Network, Part 2: Forcing pfSense DNS">
+<a class="post-action-btn btn btn--default tooltip--top" href=https://blog.flippedbits.io/2020/07/wrangling-dns-on-your-network-part-2-forcing-pfsense-dns/ data-tooltip="Wrangling DNS on Your Network, Part 2: Forcing pfSense DNS" aria-label="NEXT: Wrangling DNS on Your Network, Part 2: Forcing pfSense DNS">
 <i class="fa fa-angle-left"></i>
 <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
 </a>
 </li>
 <li class=post-action>
-<a class="post-action-btn btn btn--default tooltip--top" href=https://blog.flippedbits.io/posts/2020-07-01-how-do-i-segment-my-network/ data-tooltip="How Do I Segment My Network?" aria-label="PREVIOUS: How Do I Segment My Network?">
+<a class="post-action-btn btn btn--default tooltip--top" href=https://blog.flippedbits.io/2020/07/how-do-i-segment-my-network/ data-tooltip="How Do I Segment My Network?" aria-label="PREVIOUS: How Do I Segment My Network?">
 <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
 <i class="fa fa-angle-right"></i>
 </a>
@@ -289,17 +289,17 @@ July 3, 2020
 </a>
 </li>
 <li class="post-action hide-xs">
-<a class="post-action-btn btn btn--default" target=new href="https://www.facebook.com/sharer/sharer.php?u=https://blog.flippedbits.io/posts/2020-07-03-wrangling-dns-pt-01-pihole/" title="Share on Facebook" aria-label="Share on Facebook">
+<a class="post-action-btn btn btn--default" target=new href="https://www.facebook.com/sharer/sharer.php?u=https://blog.flippedbits.io/2020/07/wrangling-dns-on-your-network-part-1-pi-hole/" title="Share on Facebook" aria-label="Share on Facebook">
 <i class=fa-facebook-official aria-hidden=true></i>
 </a>
 </li>
 <li class="post-action hide-xs">
-<a class="post-action-btn btn btn--default" target=new href="https://twitter.com/intent/tweet?text=https://blog.flippedbits.io/posts/2020-07-03-wrangling-dns-pt-01-pihole/" title="Share on Twitter" aria-label="Share on Twitter">
+<a class="post-action-btn btn btn--default" target=new href="https://twitter.com/intent/tweet?text=https://blog.flippedbits.io/2020/07/wrangling-dns-on-your-network-part-1-pi-hole/" title="Share on Twitter" aria-label="Share on Twitter">
 <i class=fa-twitter aria-hidden=true></i>
 </a>
 </li>
 <li class="post-action hide-xs">
-<a class="post-action-btn btn btn--default" target=new href="https://plus.google.com/share?url=https://blog.flippedbits.io/posts/2020-07-03-wrangling-dns-pt-01-pihole/" title="Share on Google+" aria-label="Share on Google+">
+<a class="post-action-btn btn btn--default" target=new href="https://plus.google.com/share?url=https://blog.flippedbits.io/2020/07/wrangling-dns-on-your-network-part-1-pi-hole/" title="Share on Google+" aria-label="Share on Google+">
 <i class=fa-google-plus aria-hidden=true></i>
 </a>
 </li>
@@ -315,17 +315,17 @@ July 3, 2020
 <i id=btn-close-shareoptions class="fa fa-times"></i>
 <ul class=share-options>
 <li class=share-option>
-<a class=share-option-btn target=new href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.flippedbits.io%2Fposts%2F2020-07-03-wrangling-dns-pt-01-pihole%2F" aria-label="Share on Facebook">
+<a class=share-option-btn target=new href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.flippedbits.io%2F2020%2F07%2Fwrangling-dns-on-your-network-part-1-pi-hole%2F" aria-label="Share on Facebook">
 <i class=fa-facebook-official aria-hidden=true></i><span>Share on Facebook</span>
 </a>
 </li>
 <li class=share-option>
-<a class=share-option-btn target=new href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fblog.flippedbits.io%2Fposts%2F2020-07-03-wrangling-dns-pt-01-pihole%2F" aria-label="Share on Twitter">
+<a class=share-option-btn target=new href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fblog.flippedbits.io%2F2020%2F07%2Fwrangling-dns-on-your-network-part-1-pi-hole%2F" aria-label="Share on Twitter">
 <i class=fa-twitter aria-hidden=true></i><span>Share on Twitter</span>
 </a>
 </li>
 <li class=share-option>
-<a class=share-option-btn target=new href="https://plus.google.com/share?url=https%3A%2F%2Fblog.flippedbits.io%2Fposts%2F2020-07-03-wrangling-dns-pt-01-pihole%2F" aria-label="Share on Google+">
+<a class=share-option-btn target=new href="https://plus.google.com/share?url=https%3A%2F%2Fblog.flippedbits.io%2F2020%2F07%2Fwrangling-dns-on-your-network-part-1-pi-hole%2F" aria-label="Share on Google+">
 <i class=fa-google-plus aria-hidden=true></i><span>Share on Google+</span>
 </a>
 </li>
