@@ -136,7 +136,7 @@ July 4, 2020
 <a class=category-link href=https://blog.flippedbits.io/categories/tutorials>Tutorials</a>
 <br>
 <span class=postReadingTime>
-7 minute read
+8 minute read
 </span>
 </div>
 </div>
@@ -174,7 +174,7 @@ July 4, 2020
 <p>But when you connect to the internet, you have more than one device behind your network, so how exactly does this work if you only get one public IP?</p>
 <p>Every connection you make to somewhere is not just an IP address. Every service, like a web page, or a game server, or SSH, or FTP, runs on a given port. Each connection that you make to somewhere, whether it&rsquo;s local on your network, or public on the internet, uses a combination of an IP address and port to connect to. This connection is called a socket, and looks something like <code>174.28.36.117:22</code>, where the port is after the IP address, separated by a colon.</p>
 <p>The problem with this approach, is that behind your network, since you have multiple devices, your router can&rsquo;t just translate the IP address, since you might have multiple devices that run stuff or make requests on the same port. To avoid this conflict, your router randomizes these ports when it sends requests out. If you access a website on your laptop, and another on your phone, both of those private IP addresses are sending out a request on port 80. Your router, to translate this to one public IP, obviously can&rsquo;t translate both to port 80, or it won&rsquo;t know which device to send the packets back to when it gets a response.</p>
-<p>To fix this, your router randomizes the ports. Your laptop might have port 80 translated to port 50000 on the way out, and your phone might get translated to 50001. This process, known as <em><strong>Network Address Translation</strong></em> ensures that every connection on your network is uniquely identifiable.</p>
+<p>To fix this, your router randomizes the ports. Your router might translate port 80 on your laptop to port 50000 on the WAN side of your router on the way out, and port 80 on your phone might get translated to 50001. This process, known as <em><strong>Network Address Translation</strong></em> ensures that your router knows what traffic to send where, even though dozens of devices on your local network seem (to the internet) to be coming from the same public IP address your ISP hands you.</p>
 <h2 id=what-about-incoming-connections>What about incoming connections?</h2>
 <p>For outgoing connections, ports are randomized. This works on the way out, and since your router tracks these, it&rsquo;ll know where to send return packets on the way back in. &ldquo;<em>But what if you&rsquo;re hosting a Minecraft server, and you need incoming connections to work?</em>&rdquo; you say. If you host a server on a computer on your network, and people connect to your public IP on port 25565, it won&rsquo;t work. Why? Because that connection was initiated from the outside, so your router doesn&rsquo;t know where to send the packets.</p>
 <p>The solution to this is what we know as <em><strong>port forwarding</strong></em>. To fix this, we can create a port forwarding rule, to tell the router &ldquo;Anything on port 25565 coming in, send to 10.0.0.50 on port 25565&rdquo; and suddenly, your Minecraft server works, and people can play with you.</p>
