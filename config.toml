@@ -25,7 +25,7 @@ canonifyurls = true
 enableEmoji = true
 
 [permalinks]
-  post = "/:year/:month/:slug/"
+  posts = "/:year/:month/:slug/"
 
 [taxonomies]
   tag = "tags"
