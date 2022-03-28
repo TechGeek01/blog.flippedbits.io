@@ -30,7 +30,7 @@ On the R510, Proxmox was running with dual Xeon E5620's, and 96GB of RAM. I had 
 I decided it was time for something new, and set out to build a replacement server. My goal was to make it both faster and more power efficient, while hopefully still upgrading the storage, and I think I achieved that goal.
 
 ## The specs
-The chassis here is a Supermicro 216. While I could have gone with other, slightly older chassis, I wanted something fast and modern, so a SAS3 backplane 216 seemed like a decent choice considering the deal I got on it.
+The chassis I've chosen for this is a Supermicro 216. While I could have gone with other, slightly older chassis, I wanted something fast and modern, so a SAS3 backplane 216 seemed like a decent choice considering the deal I got on it.
 
 I decided to go with the same Supermicro X10 platform as the Unraid server, as it went well for that upgrade, and didn't break the bank as much as X11 did. This new server is running dual E5-2630 v4's, the same as the Unraid server. I could have gone way more powerful for this server, but anything higher than a 2630 in v4 costs way more, and I don't use a whole ton of processing power at any given time anyway, so I figured I could upgrade down the line if I ever needed it. These things are 10 core, 20 threads each, which is a lot of room to play with.
 
