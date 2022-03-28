@@ -1,8 +1,8 @@
 ---
 title: "Upgrading the Proxmox Server"
 date: 2022-03-28
-thumbnailImage: /img/posts/2022/03/upgrading-the-proxmox-server/header.png
-coverImage: /img/posts/2022/03/upgrading-the-proxmox-server/header.png
+thumbnailImage: /img/posts/2022/03/upgrading-the-proxmox-server/header.jpg
+coverImage: /img/posts/2022/03/upgrading-the-proxmox-server/header.jpg
 coverSize: partial
 coverMeta: out
 metaAlignment: center
@@ -39,7 +39,7 @@ I kitted it out with the same 16GB sticks of ECC DDR4 that I put in the Unraid s
 Now, for storage, this is where we get to the fun part. This 216 chassis has a `BPN-SAS3-216EL1` backplane, which lets me put some pretty balls to the wall storage in here. I threw 4 SSDs in it, specifically, the Toshiba PX05SRQ192, which are 1.92TB SAS3 SSDs, capable of 1800MB/s reads and 850MB/s writes. All 4 of these are backed with a Dell H330 flashed to IT mode. This card is SAS3008-based, and lets me run all 4 of these SSDs at pretty fast speeds. Combine this with RAIDz1, and you have 5.76TB of usable storage, one drive redundancy, and a bunch of VMs where the Proxmox BIOS screen and GRUB menu (where there's intentional timeouts to wait for you to press a key), take longer to go by than the entire rest of the boot process, and most of that is waiting for the network link to come up.
 
 ## The result
-{{< image src="/img/posts/2022/03/upgrading-the-proxmox-server/server-racked.jpg" title="All in all, this went pretty well, other than that the SAS cables are way longer than I needed them to be." >}}
+{{< image src="/img/posts/2022/03/upgrading-the-proxmox-server/server-open.jpg" title="All in all, this went pretty well, other than that the SAS cables are way longer than I needed them to be." >}}
 
 I set some pretty ambitious goals here, as I wanted something that was faster, better, had more performance in general, and still wanted it to suck less power. So how did we do? Well, this is definitely more modern hardware, and has a less ewaste-y vibe to it than an R510.
 
